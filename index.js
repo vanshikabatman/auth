@@ -6,7 +6,9 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware to parse JSON body
 app.use(bodyParser.json());
-
+ app.get('/', (req, res) => {
+  res.end('Hello World!');
+ });
 // Callback endpoint
 app.post('/callback', (req, res) => {
   const enterpriseToken = req.body.enterpriseToken; // Capture the EMM token
